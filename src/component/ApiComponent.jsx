@@ -37,6 +37,10 @@ fetch('https://countriesnow.space/api/v0.1/countries/flag/images',{
   console.log('err',err);
 })
 }
+
+const exit = ()=>{
+  setSelected()
+}
   return (
     <>
     <div className='container'>
@@ -45,7 +49,9 @@ fetch('https://countriesnow.space/api/v0.1/countries/flag/images',{
       )}
     </div>
   { selected?.flag && <div className='flag-container'>
+        <div className='postion-exit'><button className='exit-btn' onClick={exit}>Close</button></div>
         <img src={selected?.flag} alt="" height={'200px'}/>
+        <div style={{color:"white"}}><b>{selected.name}</b></div>
     </div>}
     </>
   )
